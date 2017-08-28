@@ -14,7 +14,7 @@ done
 
 shift $((OPTIND-1))
 if [ $# -le 0 ]; then
-	echo $0"[-o offset, -c crop, -b border] <savefile>"
+	echo $0"[-o offset, -c crop, -b border -w] <savefile>"
 	echo 'Generates latest images from the Himawari8 satellite. Offset like this: "9 hour ago 30 minute ago", crop and border in percent.'
 	exit 1
 fi
