@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 while getopts o:c:b:pw option
 do
@@ -55,5 +55,7 @@ if [[ $border ]]; then
 	convert $outFile -bordercolor black -border $border% $outFile || exit 1
 fi
 if [[ $wallpaper ]]; then
+	gsettings set org.gnome.desktop.background picture-options 'scaled'
+	gsettings set org.gnome.desktop.background primary-color '#000000'
 	gsettings set org.gnome.desktop.background picture-uri "\"file://$outFile\""
 fi
